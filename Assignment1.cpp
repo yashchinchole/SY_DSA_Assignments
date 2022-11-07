@@ -99,11 +99,11 @@ public:
 
     void Display()
     {
-        cout << "Key  Id  Name " << endl;
+        cout << "\n\tIndex \t\tId \t\tName " << endl;
 
         int i;
         for (i = 0; i < 10; i++)
-            cout << " " << i << "   " << Table[i].id << "  " << Table[i].name << endl;
+            cout << "\n\t" << i << "\t\t" << Table[i].id << "\t\t" << Table[i].name << endl;
     }
 };
 
