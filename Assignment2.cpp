@@ -1,3 +1,7 @@
+// ASSIGNMENT NO - 2
+// NAME - YASH JITENDRA CHINCHOLE
+// ROLL NO - SYCOA37
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -125,7 +129,7 @@ void SingleLinkedList::Insert_at_position()
     {
     Insert_at_end();
     } */
-    
+
     else
     {
         Node *newnode;
@@ -136,7 +140,7 @@ void SingleLinkedList::Insert_at_position()
         cin >> p;
         newnode->data = p;
         Node *temp = header;
-        
+
         for (int i = 0; i < n - 2; i++)
         {
             // prenode=temp;
@@ -171,7 +175,7 @@ void SingleLinkedList::Delete_at_position()
     if (n > count)
         cout << "\nYou can't delete element at " << n << " ! As only " << count
              << " Elements are in list .";
-    
+
     else
     {
         temp = header;
@@ -193,7 +197,7 @@ int main()
         cout << "\n1.InsertAtBeginning\n2.Insert_at_end\n3.Insert_at_position\n4.Delete_first\n5.Delete_last\n6.Delete_at_position\n7.Display_list\n8.exit";
         cout << "\nEnter your choice : ";
         cin >> ch;
-        
+
         switch (ch)
         {
         case 1:

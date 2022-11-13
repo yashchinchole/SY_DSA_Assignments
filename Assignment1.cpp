@@ -1,3 +1,7 @@
+// ASSIGNMENT NO - 1
+// NAME - YASH JITENDRA CHINCHOLE
+// ROLL NO - SYCOA37
+
 #include <bits/stdc++.h>
 using namespace std;
 #define SIZE 10
@@ -91,7 +95,7 @@ public:
         {
             if (iKey == Table[i].id)
             {
-                cout << "Employee Name" << Table[i].name << endl;
+                cout << "Employee Name : " << Table[i].name << endl;
                 cout << "Employee found at index " << i << endl;
             }
         }
