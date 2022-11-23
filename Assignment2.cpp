@@ -124,32 +124,20 @@ void SingleLinkedList::Insert_at_position()
     else if (n == 1)
         InsertAtBeginning();
 
-    /*
-    else if(n==count)
-    {
-    Insert_at_end();
-    } */
+    else if (n == count)
+        Insert_at_end();
 
     else
     {
-        Node *newnode;
-        Node *prenode;
-        newnode = new Node();
-        cout << "\nEnter the data part of the node : ";
+        Node *newnode = new Node;
+        cout << "\nEnter Data";
         int p;
         cin >> p;
         newnode->data = p;
         Node *temp = header;
 
         for (int i = 0; i < n - 2; i++)
-        {
-            // prenode=temp;
             temp = temp->next;
-        }
-
-        /*prenode=temp->next;
-           temp->next=newnode;
-           newnode->next=prenode; */
 
         newnode->next = temp->next;
         temp->next = newnode;
