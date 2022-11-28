@@ -62,8 +62,8 @@ void insertAfter(DLL **head, int prev_data, int data)
 
     newNode->next = temp->next;
     newNode->prev = temp;
-    temp->next = newNode;
     temp->next->prev = newNode;
+    temp->next = newNode;
 }
 
 void deleteAtStart(DLL **head)

@@ -84,7 +84,7 @@ void Infix_2_Postfix(Stack **head, string s)
         {
             while (top(head) != '(')
             {
-                res = res + top(head);
+                res += top(head);
                 pop(head);
             }
             pop(head);
