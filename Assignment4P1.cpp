@@ -1,71 +1,79 @@
-// ASSIGNMENT NO - 4 PART - 1
-// NAME - YASH JITENDRA CHINCHOLE
-// ROLL NO - SYCOA37
-
 #include <bits/stdc++.h>
 using namespace std;
 
 struct Node
 {
     int data;
-    Node *next;
-} *top = NULL;
+    struct Node *next;
+};
 
 class Stack
 {
+private:
+    Node *top = NULL;
+
 public:
-    void Push();
-    void Pop();
-    void Peek();
+    void Push(int data);
+    int Pop();
+    void Peek(int p);
     void Display();
 };
 
-void Stack::Push()
+void Stack::Push(int data)
 {
-    int num;
-    cout << "Enter Number to Push" << endl;
-    cin >> num;
+    Node *temp = new Node;
 
-    Node *newnode = new Node;
-    if (!newnode)
-    {
+    if (!temp)
         cout << "Stack Overflow" << endl;
-        return;
-    }
 
-    newnode->data = num;
-    newnode->next = top;
-    top = newnode;
+    else
+    {
+        temp->data = data;
+        temp->next = top;
+        top = temp;
+    }
 }
 
-void Stack::Pop()
+int Stack::Pop()
 {
-    if (top)
+    int x = -1;
+
+    if (!top)
+        cout << "Stack Underflow" << endl;
+
+    else
     {
         Node *temp = top;
         top = top->next;
+        x = temp->data;
         delete temp;
     }
 
-    else
-        cout << "Stack Underflow" << endl;
+    return x;
 }
 
-void Stack::Peek()
+void Stack ::Peek(int p)
 {
-    if (top)
-        cout << "\nTop Element : " << top->data << endl;
+    Node *temp = top;
+
+    for (int i = 0; i < p - 1 && temp != NULL; i++)
+        temp = temp->next;
+
+    if (!temp)
+        cout << "Incorrect Position" << endl;
 
     else
-        cout << "Stack is empty" << endl;
+        cout << p << " Position Element : " << temp->data << endl;
 }
 
 void Stack::Display()
 {
     Node *temp = top;
-    cout << "Elements in Stack" << endl;
 
-    if (top)
+    if (!top)
+        cout << "Stack is Empty" << endl;
+
+    else
     {
         while (temp != NULL)
         {
@@ -74,41 +82,19 @@ void Stack::Display()
         }
         cout << endl;
     }
-
-    else
-        cout << "Stack is empty" << endl;
 }
 
 int main()
 {
     Stack s;
-
-    while (1)
-    {
-        int cho;
-        cout << "Enter Choice" << endl;
-        cout << "1 - Push  |  2 - Pop  |  3 - Peek  |  4 - Display  |  5 - Exit\n";
-        cin >> cho;
-
-        switch (cho)
-        {
-        case 1:
-            s.Push();
-            break;
-        case 2:
-            s.Pop();
-            s.Display();
-            break;
-        case 3:
-            s.Peek();
-            break;
-        case 4:
-            s.Display();
-            break;
-        case 5:
-            exit(0);
-        }
-    }
+    s.Push(10);
+    s.Push(20);
+    s.Push(30);
+    s.Push(40);
+    s.Peek(2);
+    s.Display();
+    s.Pop();
+    s.Display();
 
     return 0;
 }
