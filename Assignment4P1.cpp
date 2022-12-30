@@ -13,9 +13,9 @@ private:
     Node *top = NULL;
 
 public:
-    void Push(int data);
+    void Push(int);
     int Pop();
-    void Peek(int p);
+    void Peek(int);
     void Display();
 };
 
