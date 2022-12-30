@@ -32,14 +32,12 @@ void push(Stack **head, char c)
     *head = temp;
 }
 
-char pop(Stack **head)
+void pop(Stack **head)
 {
     char popped = (*head)->ch;
     Stack *temp = *head;
     *head = (*head)->next;
     free(temp);
-
-    return popped;
 }
 
 char top(Stack **head)
@@ -111,9 +109,11 @@ void Infix_2_Postfix(Stack **head, string s)
 
 int main()
 {
-    string exp;
-    cout << "Enter Expression" << endl;
-    cin >> exp;
+    // string exp;
+    // cout << "Enter Expression" << endl;
+    // cin >> exp;
+
+    string exp = "a+b*(c^d-e)^(f+g*h)-i";
 
     Stack *head = NULL;
     push(&head, ' ');
